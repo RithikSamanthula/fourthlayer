@@ -403,7 +403,7 @@ export default function FourthLayerAI() {
               </span>
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              Founded by a team of AI researchers, medical professionals, and healthcare innovators, FourthLayer AI is
+              Founded by a AI researchers, FourthLayer AI is
               revolutionizing how we monitor and understand our health.
             </p>
           </div>
@@ -429,7 +429,7 @@ export default function FourthLayerAI() {
                   />
                   <div className="text-center p-4 bg-slate-900/30 rounded-lg border border-blue-600/20 relative">
                     <div className="text-2xl font-bold text-blue-400">10M+</div>
-                    <div className="text-sm text-slate-500">Health Scans</div>
+                    <div className="text-sm text-slate-500">Data Points</div>
                   </div>
                 </div>
                 <div className="relative">
@@ -454,7 +454,7 @@ export default function FourthLayerAI() {
                 {
                   icon: <Users className="w-6 h-6 text-white" />,
                   title: "Expert Team",
-                  description: "Leading AI researchers and medical professionals",
+                  description: "Built by leading AI researchers",
                   gradient: "from-blue-600 to-cyan-700",
                 },
                 {
