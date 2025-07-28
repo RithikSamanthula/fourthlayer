@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0 0;
+    --foreground: 226 232 240;
+    --card: 3 7 18;
+    --card-foreground: 226 232 240;
+    --popover: 3 7 18;
+    --popover-foreground: 226 232 240;
+    --primary: 29 78 216;
+    --primary-foreground: 248 250 252;
+    --secondary: 15 23 42;
+    --secondary-foreground: 226 232 240;
+    --muted: 15 23 42;
+    --muted-foreground: 100 116 139;
+    --accent: 30 41 59;
+    --accent-foreground: 226 232 240;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --border: 30 41 59;
+    --input: 30 41 59;
+    --ring: 29 78 216;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0 0;
+    --foreground: 226 232 240;
+    --card: 3 7 18;
+    --card-foreground: 226 232 240;
+    --popover: 3 7 18;
+    --popover-foreground: 226 232 240;
+    --primary: 29 78 216;
+    --primary-foreground: 248 250 252;
+    --secondary: 15 23 42;
+    --secondary-foreground: 226 232 240;
+    --muted: 15 23 42;
+    --muted-foreground: 100 116 139;
+    --accent: 30 41 59;
+    --accent-foreground: 226 232 240;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --border: 30 41 59;
+    --input: 30 41 59;
+    --ring: 29 78 216;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  *,
+  *::before,
+  *::after {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  *:focus,
+  *:focus-visible,
+  *:focus-within {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: inherit !important;
+  }
+
+  button:focus,
+  button:focus-visible,
+  a:focus,
+  a:focus-visible,
+  input:focus,
+  input:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: inherit !important;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Comprehensive navbar outline prevention */
+header,
+header *,
+header nav,
+header nav *,
+header nav div,
+header nav div *,
+header nav button,
+header nav button *,
+header nav a,
+header nav a *,
+header nav span,
+header nav span *,
+header nav ul,
+header nav ul *,
+header nav li,
+header nav li *,
+nav[data-state],
+nav[data-state] *,
+nav[data-state="active"],
+nav[data-state="active"] * {
+  outline: none !important;
+  box-shadow: none !important;
+  border: inherit !important;
+}
+
+/* Focus states for navbar */
+header:focus,
+header *:focus,
+header nav:focus,
+header nav *:focus,
+header nav div:focus,
+header nav div *:focus,
+header nav button:focus,
+header nav button *:focus,
+header nav a:focus,
+header nav a *:focus,
+header nav span:focus,
+header nav span *:focus,
+header nav ul:focus,
+header nav ul *:focus,
+header nav li:focus,
+header nav li *:focus,
+nav[data-state]:focus,
+nav[data-state] *:focus,
+nav[data-state="active"]:focus,
+nav[data-state="active"] *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+/* Focus-visible states for navbar */
+header:focus-visible,
+header *:focus-visible,
+header nav:focus-visible,
+header nav *:focus-visible,
+header nav div:focus-visible,
+header nav div *:focus-visible,
+header nav button:focus-visible,
+header nav button *:focus-visible,
+header nav a:focus-visible,
+header nav a *:focus-visible,
+header nav span:focus-visible,
+header nav span *:focus-visible,
+header nav ul:focus-visible,
+header nav ul *:focus-visible,
+header nav li:focus-visible,
+header nav li *:focus-visible,
+nav[data-state]:focus-visible,
+nav[data-state] *:focus-visible,
+nav[data-state="active"]:focus-visible,
+nav[data-state="active"] *:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+/* Active and hover states for navbar */
+header:active,
+header *:active,
+header nav:active,
+header nav *:active,
+header nav div:active,
+header nav div *:active,
+header nav button:active,
+header nav button *:active,
+header nav a:active,
+header nav a *:active,
+header nav span:active,
+header nav span *:active,
+header nav ul:active,
+header nav ul *:active,
+header nav li:active,
+header nav li *:active,
+nav[data-state]:active,
+nav[data-state] *:active,
+nav[data-state="active"]:active,
+nav[data-state="active"] *:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+/* Prevent any focus outlines on waitlist card */
+.waitlist-card,
+.waitlist-card *,
+.waitlist-card:focus,
+.waitlist-card:focus-within,
+.waitlist-card:focus-visible,
+.waitlist-card:hover,
+.waitlist-card:active {
+  outline: none !important;
+  box-shadow: inherit !important;
+}
+
+/* Enhanced static glow for waitlist card */
+.waitlist-card.glow-blue {
+  box-shadow: 0 0 20px rgba(29, 78, 216, 0.4), 0 0 40px rgba(29, 78, 216, 0.2), 0 0 60px rgba(29, 78, 216, 0.1) !important;
+  border: 1px solid rgba(29, 78, 216, 0.3) !important;
+}
+
+/* Ensure input still gets proper focus styles */
+.waitlist-input:focus,
+.waitlist-input:focus-visible {
+  outline: none !important;
+  border-color: rgba(59, 130, 246, 0.6) !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Remove any potential browser focus rings */
+.waitlist-card *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.waitlist-card input:focus {
+  outline: none !important;
+  border-color: rgba(59, 130, 246, 0.6) !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Custom glow effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(29, 78, 216, 0.4), 0 0 40px rgba(29, 78, 216, 0.1);
+}
+
+.glow-blue-strong {
+  box-shadow: 0 0 30px rgba(29, 78, 216, 0.6), 0 0 60px rgba(29, 78, 216, 0.3), 0 0 90px rgba(29, 78, 216, 0.1);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.4), 0 0 40px rgba(6, 182, 212, 0.1);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(29, 78, 216, 0.6), 0 0 20px rgba(29, 78, 216, 0.4);
+}
+
+.border-glow {
+  border: 1px solid rgba(29, 78, 216, 0.4);
+  box-shadow: 0 0 10px rgba(29, 78, 216, 0.3), inset 0 0 10px rgba(29, 78, 216, 0.1);
+}
+
+.bg-glow {
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+  border: 1px solid rgba(29, 78, 216, 0.3);
+}
+
+/* Grid effect for other sections (keeping for non-hero sections) */
+.grid-bg {
+  background-image: linear-gradient(rgba(29, 78, 216, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 78, 216, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: 0 0, 0 0;
+}
+
+/* Retro Grid Animation Styles */
+@keyframes grid {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-1 * var(--cell-size)));
+  }
+}
+
+.animate-grid {
+  animation: grid 20s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-\[spin_2s_linear_infinite\] {
+  animation: spin 2s linear infinite;
+}
